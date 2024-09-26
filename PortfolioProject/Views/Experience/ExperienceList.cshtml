@@ -1,0 +1,59 @@
+﻿@model List<PortfolioProject.Models.Experience>
+
+@{
+    ViewBag.Title = "ExperienceList";
+    Layout = "~/Views/Admin/Index.cshtml";
+    int count = 0;
+}
+
+<h2 class="mb-4">Deneyim Listesi ve İşlemleri</h2>
+
+<a href="/Experience/CreateExperience/" class="btn btn-info">Yeni Deneyim Girişi</a>
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Alt Başlık</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td>@item.SubTitle</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="/Experience/UpdateExperience/@item.ExperienceID" class="btn btn-warning">Güncelle</a>
+                <a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+@*
+
+    1-) Uçak Bileti Rezervasyon
+    2-) Booking
+    3-) Sosyal Medya Uygulaması
+    4-) MacFit Klonu
+    5-) OBS
+    6-) Online Eğitim Platformu
+    7-) Bankacılık Uygulaması
+    8-) Borsa Takip
+    9-) Etkinlik/Organizasyon
+    10-) Hayvan Sahiplendirme
+    11-) Gratis Klonu
+    12-) Film/Dizi Yorum Programı (Ekşi Sözlük)
+    13-) Maçkolik
+    14-) Sağlık MHRS
+
+*@
