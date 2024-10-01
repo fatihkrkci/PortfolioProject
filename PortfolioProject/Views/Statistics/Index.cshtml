@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">İstatistikler</h2>
+
+<div class="alert alert-success">Toplam Mesaj Sayısı: <b>@ViewBag.totalMessageCount</b> </div>
+<div class="alert alert-danger">Okunmuş Mesaj Sayısı: <b>@ViewBag.messageIsReadTrueCount</b> </div>
+<div class="alert alert-warning">Okunmamış Mesaj Sayısı: <b>@ViewBag.messageIsReadFalseCount</b> </div>
+<div class="alert alert-dark">Yetenek Sayısı: <b>@ViewBag.skillCount</b> </div>
+<div class="alert alert-info">Yeteneklerin Toplam Puanı: <b>@ViewBag.skillRateSum</b> </div>
+<div class="alert alert-primary">Yeteneklerin Ortalama Puanı: <b>@ViewBag.skillRateAvg</b> </div>
+<div class="alert alert-primary" style="background-color: #ff6a00; color: #ffffff">En Yüksek Puanlı Yetenek: <b>@ViewBag.maxRateSkillName</b> </div>
+<div class="alert alert-primary" style="background-color: #808080; color: #ffffff">Referans Konulu Mesaj Sayısı: <b>@ViewBag.getMessageCountBySubjectReferances</b> </div>
+@*<div class="alert alert-primary" style="background-color: #808080; color: #ffffff"><b>@ViewBag.senderOfReferenceMessage</b> </div>*@
+<div class="alert alert-primary" style="background-color: #4800ff; color: #ffffff">İçinde H Harfi Geçen Mesaj Sayısı: <b>@ViewBag.getMessageCountByEmailContainHAndIsReadTrue</b> </div>
+<div class="alert alert-primary" style="background-color: #541111; color: #ffffff">Değeri 90 Olan Yetenek İsmi: <b>@ViewBag.getSkillNameByRate90</b> </div>
