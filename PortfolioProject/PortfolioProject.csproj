@@ -531,6 +531,9 @@
     <Content Include="Views\Default\PartialExperience.cshtml" />
     <Content Include="Views\Default\PartialSkill.cshtml" />
     <Content Include="Views\Contact\PartialContactSidebar.cshtml" />
+    <Content Include="Views\Contact\PartialContactDetail.cshtml" />
+    <Content Include="Views\Contact\PartialContactLocation.cshtml" />
+    <Content Include="Views\Default\PartialFooter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

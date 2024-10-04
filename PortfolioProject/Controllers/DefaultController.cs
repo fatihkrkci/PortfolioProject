@@ -13,7 +13,27 @@ namespace PortfolioProject.Controllers
 
         public ActionResult Index()
         {
+            List<SelectListItem> values = (from x in context.Category.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryID.ToString()
+                                           }).ToList();
+            ViewBag.Categories = values;
+
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(Contact contact)
+        {
+            contact.SendDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            contact.IsRead = false;
+
+            context.Contact.Add(contact);
+            context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         public PartialViewResult PartialHead()
@@ -60,6 +80,11 @@ namespace PortfolioProject.Controllers
         {
             var values = context.Skill.Where(x => x.Status == true).ToList();
             return PartialView(values);
+        }
+
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
         }
     }
 }
