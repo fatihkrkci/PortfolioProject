@@ -590,6 +590,7 @@
     <Content Include="Views\Internship\CreateInternship.cshtml" />
     <Content Include="Views\Internship\UpdateInternship.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Default\PartialSocialMediaAbout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,12 +21,7 @@
                             <div class="col-xl-5">
                                 <div class="about-img bg-light p-4 wow fadeInUp" data-wow-delay="0.1s">
                                     <img src="@item.ImageUrl" class="img-fluid w-100" alt="Image">
-                                    <div class="sosial-icon">
-                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
-                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-twitter text-white"></i></a>
-                                        <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-instagram text-white"></i></a>
-                                        <a class="btn btn-primary btn-sm-square mb-0" href="#"><i class="fab fa-linkedin-in text-white"></i></a>
-                                    </div>
+                                    @Html.Action("PartialSocialMediaAbout", "Default")
                                 </div>
                             </div>
                             <div class="col-xl-7 wow fadeInUp" data-wow-delay="0.3s">

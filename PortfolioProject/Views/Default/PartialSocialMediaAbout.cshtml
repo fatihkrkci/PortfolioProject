@@ -1,0 +1,8 @@
+﻿@model List<PortfolioProject.Models.SocialMedia>
+
+<div class="sosial-icon">
+    @foreach (var item in Model)
+    {
+        <a class="btn btn-primary btn-sm-square mb-3" href="@item.Url"><i class="@item.Icon text-white"></i></a>
+    }
+</div>

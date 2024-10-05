@@ -128,5 +128,11 @@ namespace PortfolioProject.Controllers
             var values = context.SocialMedia.Where(x => x.Status == true).ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult PartialSocialMediaAbout()
+        {
+            var values = context.SocialMedia.Where(x => x.Status == true).ToList();
+            return PartialView(values);
+        }
     }
 }

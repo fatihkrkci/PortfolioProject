@@ -23,7 +23,14 @@ namespace PortfolioProject.Controllers
         {
             var value = context.Profile.Find(profile.ProfileID);
 
+            value.BirthDate = profile.BirthDate;
+            value.Email = profile.Email;
+            value.Phone = profile.Phone;
+            value.Github = profile.Github;
+            value.Address = profile.Address;
             value.Title = profile.Title;
+            value.ImageUrl = profile.ImageUrl;
+            value.Description = profile.Description;
 
             context.SaveChanges();
 
