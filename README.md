@@ -3,24 +3,26 @@ Bu proje M&Y Yazılım Eğitim Akademi Danışmanlık bünyesinde Murat Yüceda�
 
 # Projeye Genel Bakış
 👤 Kullanıcı Arayüzü: Responsive, modern ve anlaşılır bir tasarım, ziyaretçilere hakkımda fikir sahibi olmalarını sağlıyor ve iletişim kısmından Mesaj Gönderme imkanı sunuyor.
+<br/>
 🖱️ Admin Yönetim Paneli: Admin Anasayfadaki Bütün Tablolar için crud işlemleri gerçekleştirerek anasayfayı yönetebilir.
 
 # Kullanılan Teknolojiler ve Uygulamalar
-- 🤖 ASP.NET MVC -> Web uygulamasının temel çerçevesi olarak kullanıldı ✅
-- 🎐  Entity Framework (ORM) 6.0 - > Veritabanı etkileşimi ve ORM (Nesne İlişkilendirme Haritası) için kullanıldı.✅
-- 🎡  DB First -> Veritabanı şeması, MSSQL üzerinde oluşturulduktan sonra Visual Studio geliştirme ortamına aktarıldı - ✅
-- 💻 Microsoft SQL Server (MSSQL) Veritabanı -> Veritabanı yönetimi ve depolama için kullanıldı.- ✅
-- 🎨 HTML-CSS-Bootstrap (Arayüz tasarımı için) - ✅
-- 📊 Chart JS ✅
-- 🖌️ JS  ✅
-- ⌨️ LINQ - ✅
+- 🤖 ASP.NET MVC -> Web uygulamasının temel çerçevesi olarak kullanıldı.
+- 🎐  Entity Framework (ORM) 6.0 - > Veritabanı etkileşimi ve ORM (Nesne İlişkilendirme Haritası) için kullanıldı.
+- 🎡  DB First -> Veritabanı şeması, MSSQL üzerinde oluşturulduktan sonra Visual Studio geliştirme ortamına aktarıldı.
+- 💻 Microsoft SQL Server (MSSQL) Veritabanı -> Veritabanı yönetimi ve depolama için kullanıldı.
+- 🎨 HTML-CSS-Bootstrap (Arayüz tasarımı için)
+- 📊 Chart JS
+- 🖌️ JS
+- ⌨️ LINQ
 
 
   #Veriabanı Diyagramı
    ![image](https://github.com/user-attachments/assets/e79032f2-3eca-450a-b1a8-076e91ad794f)
 
   #Kullanıcı Arayüzü
-  ![screencapture-localhost-44355-Default-Index-2024-10-05-05_53_44](https://github.com/user-attachments/assets/f998bf4e-60e4-40c5-8ba4-0c45d84980a8)
+  ![screencapture-localhost-44355-Default-Index-2024-10-05-11_54_37](https://github.com/user-attachments/assets/f281c18e-7fd2-4be8-a2ba-f6febf6ad65d)
+
 
   #Admin Arayüzü
   ![screencapture-localhost-44355-Dashboard-Index-2024-10-05-05_55_24](https://github.com/user-attachments/assets/a75da38c-3f46-4649-974a-423fa2a0ddab)
