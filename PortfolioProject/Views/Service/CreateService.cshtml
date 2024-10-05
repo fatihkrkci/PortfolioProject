@@ -1,0 +1,21 @@
+﻿@model PortfolioProject.Models.Service
+
+@{
+    ViewBag.Title = "CreateService";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Yeni Hizmet Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Hizmet Başlığı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Hizmet Açıklaması</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <label>Hizmet İkonu</label>
+    @Html.TextAreaFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Hizmeti Oluştur</button>
+</form>

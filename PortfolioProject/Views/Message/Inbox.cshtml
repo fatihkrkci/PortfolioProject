@@ -9,19 +9,69 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
+        <th>Kategori</th>
         <th>Gönderen</th>
+        <th>Email</th>
         <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Tarih</th>
         <th>Durum</th>
         <th>İşlemler</th>
     </tr>
     @foreach (var item in Model)
     {
         count++;
+
+        string badgeClass = "";
+        switch (item.Category.CategoryName)
+        {
+            case "Teşekkür":
+                badgeClass = "badge bg-danger";
+                break;
+            case "Öneri":
+                badgeClass = "badge bg-success";
+                break;
+            case "Proje Talebi":
+                badgeClass = "badge bg-primary";
+                break;
+            case "Referans":
+                badgeClass = "badge bg-warning";
+                break;
+            case "Toplantı":
+                badgeClass = "badge bg-purple";
+                break;
+            case "Görüşme":
+                badgeClass = "badge bg-warning";
+                break;
+            case "Reklam":
+                badgeClass = "badge bg-pink";
+                break;
+            case "Diğer":
+                badgeClass = "badge bg-secondary";
+                break;
+            default:
+                badgeClass = "badge bg-dark";
+                break;
+        }
+
         <tr>
             <td>@count</td>
+            <td><span class="@badgeClass p-2" style="color:white; font-size: small">@item.Category.CategoryName</span></td>
             <td>@item.NameSurname</td>
-            <td>@item.SendDate</td>
+            <td>@item.Email</td>
             <td>@item.Subject</td>
+            <td>@item.Message.Substring(0, 30)...</td>
+            <td>@item.SendDate.Value.ToString("dd.MM.yyyy HH:mm")</td>
+            <td>
+                @if (item.IsRead == true)
+                {
+                    <span class="badge badge-success p-2">Okundu</span>
+                }
+                else
+                {
+                    <span class="badge badge-danger p-2">Okunmadı</span>
+                }
+            </td>
             <td>
                 @if (item.IsRead == false)
                 {
@@ -31,8 +81,8 @@
                 {
                     <a href="/Message/ChangeMessageStatusToFalse/@item.ContactID" class="btn btn-dark">Okunmadı Olarak İşaretle</a>
                 }
-                <a href="#" class="btn btn-warning">Mesajı Aç</a>
-                <a href="#" class="btn btn-danger">Mesajı Sil</a>
+                <a href="/Message/MessageDetail/@item.ContactID" class="btn btn-warning">Mesajı Aç</a>
+                <a href="/Message/DeleteMessage/@item.ContactID" class="btn btn-danger">Mesajı Sil</a>
             </td>
         </tr>
     }

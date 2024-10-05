@@ -1,4 +1,7 @@
-﻿@model List<PortfolioProject.Models.Skill>
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<PortfolioProject.Models.Skill>
 
 @{
     ViewBag.Title = "SkillList";
@@ -16,7 +19,8 @@
     <tr>
         <th>ID</th>
         <th>Başlık</th>
-        <th>Değer</th>
+        <th>Derece</th>
+        <th>İkon</th>
         <th>İşlemler</th>
     </tr>
 
@@ -26,6 +30,7 @@
             <th>@item.SkillID</th>
             <td>@item.SkillName</td>
             <td>@item.Rate</td>
+            <td>@item.Icon</td>
             <td>
                 <a href="/Skill/UpdateSkill/@item.SkillID" class="btn btn-warning">Güncelle</a>
                 <a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Sil</a>
@@ -34,22 +39,46 @@
     }
 </table>
 
+@Html.PagedListPager(Model, page => Url.Action("SkillList", new { page }))
 
-@*
 
-    1-) Uçak Bileti Rezervasyon
-    2-) Booking
-    3-) Sosyal Medya Uygulaması
-    4-) MacFit Klonu
-    5-) OBS
-    6-) Online Eğitim Platformu
-    7-) Bankacılık Uygulaması
-    8-) Borsa Takip
-    9-) Etkinlik/Organizasyon
-    10-) Hayvan Sahiplendirme
-    11-) Gratis Klonu
-    12-) Film/Dizi Yorum Programı (Ekşi Sözlük)
-    13-) Maçkolik
-    14-) Sağlık MHRS
-    
-*@
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        list-style-type: none;
+    }
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .pagination li a, .pagination li span {
+        display: block;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .pagination li a:hover {
+        background-color: #0056b3;
+    }
+
+    .pagination li.active span {
+        background-color: #0056b3;
+        font-weight: bold;
+    }
+
+    .pagination li.disabled span {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    .pagination li.active span, .pagination li.disabled span {
+        color: white;
+    }
+</style>

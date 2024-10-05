@@ -1,0 +1,22 @@
+﻿@model PortfolioProject.Models.Service
+
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Hizmet Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.ServiceID)
+    <label>Hizmet Başlığı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Hizmet Açıklaması</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <label>Hizmet İkonu</label>
+    @Html.TextAreaFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Hizmeti Güncelle</button>
+</form>

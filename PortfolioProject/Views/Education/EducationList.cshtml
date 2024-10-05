@@ -1,4 +1,5 @@
-﻿
+﻿@model List<PortfolioProject.Models.Education>
+
 @{
     ViewBag.Title = "EducationList";
     Layout = "~/Views/Admin/Index.cshtml";
@@ -16,24 +17,22 @@
         <th>ID</th>
         <th>Başlık</th>
         <th>Alt Başlık</th>
+        <th>Bölüm</th>
+        <th>Açıklama</th>
         <th>İşlemler</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>Düzce Üniversitesi</td>
-        <td>Bilgisayar Mühendisliği</td>
-        <td>
-            <a href="#" class="btn btn-warning">Güncelle</a>
-            <a href="#" class="btn btn-danger">Sil</a>
-        </td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>İstanbul Üniversitesi</td>
-        <td>Grafik Tasarımı</td>
-        <td>
-            <a href="#" class="btn btn-warning">Güncelle</a>
-            <a href="#" class="btn btn-danger">Sil</a>
-        </td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EducationID</td>
+            <td>@item.Title</td>
+            <td>@item.SubTitle</td>
+            <td>@item.Department</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="/Education/UpdateEducation/@item.EducationID" class="btn btn-warning">Güncelle</a>
+                <a href="/Education/DeleteEducation/@item.EducationID" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
 </table>

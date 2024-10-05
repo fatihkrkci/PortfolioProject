@@ -1,0 +1,27 @@
+﻿@model PortfolioProject.Models.Internship
+
+@{
+    ViewBag.Title = "UpdateInternship";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h2 class="mb-4">Staj Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.InternshipID)
+    <label>Şirket Adı</label>
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    <br />
+    <label>Başlangıç Tarihi</label>
+    @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control" })
+    <br />
+    <label>Bitiş Tarihi</label>
+    @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control" })
+    <br />
+    <label>Pozisyon</label>
+    @Html.TextAreaFor(x => x.Position, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Stajı Güncelle</button>
+</form>

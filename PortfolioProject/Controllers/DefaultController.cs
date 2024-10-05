@@ -86,5 +86,47 @@ namespace PortfolioProject.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult PartialEducation()
+        {
+            var values = context.Education.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialService()
+        {
+            var values = context.Service.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialPortfolio()
+        {
+            var values = context.Portfolio.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialTestimonial()
+        {
+            var values = context.Testimonial.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialInternship()
+        {
+            var values = context.Internship.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialSocialMediaHeader()
+        {
+            var values = context.SocialMedia.Where(x => x.Status == true).ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialSocialMediaFooter()
+        {
+            var values = context.SocialMedia.Where(x => x.Status == true).ToList();
+            return PartialView(values);
+        }
     }
 }

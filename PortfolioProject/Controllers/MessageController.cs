@@ -32,5 +32,28 @@ namespace PortfolioProject.Controllers
             context.SaveChanges();
             return RedirectToAction("Inbox");
         }
+
+        public ActionResult DeleteMessage(int id)
+        {
+            var value = context.Contact.Find(id);
+            context.Contact.Remove(value);
+            context.SaveChanges();
+
+            return RedirectToAction("Inbox");
+        }
+
+        public ActionResult MessageDetail(int id)
+        {
+            var value = context.Contact.Find(id);
+
+            if (value.IsRead == false)
+            {
+                value.IsRead = true;
+            }
+
+            context.SaveChanges();
+
+            return View(value);
+        }
     }
 }

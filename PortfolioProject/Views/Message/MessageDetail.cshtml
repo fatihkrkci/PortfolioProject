@@ -1,0 +1,38 @@
+﻿@model PortfolioProject.Models.Contact
+
+@{
+    ViewBag.Title = "MessageDetail";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Mesaj Detayları Sayfası</h2>
+
+<form method="post">
+    <div class="row">
+        @Html.HiddenFor(x => x.ContactID)
+        <div class="col-6 my-3">
+            <label>Tarih</label>
+            @Html.TextBoxFor(x => x.SendDate, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <br />
+        <div class="col-6 my-3">
+            <label>Gönderen Email</label>
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <br />
+        <div class="col-6 my-3">
+            <label>Gönderen Adı Soyadı</label>
+            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <br />
+        <div class="col-6 my-3">
+            <label>Konu</label>
+            @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <br />
+        <div class="col-12 my-3">
+            <label>Mesaj İçeriği</label>
+            @Html.TextAreaFor(x => x.Message, 5, 1, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+</form>

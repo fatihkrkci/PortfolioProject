@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4ce3b7fe963540ee879904d74ee37f52" Name="Diagram1" ZoomLevel="63">
+      <Diagram DiagramId="4ce3b7fe963540ee879904d74ee37f52" Name="Diagram1" ZoomLevel="108">
         <EntityTypeShape EntityType="DbMyPortfolioModel.About" Width="1.5" PointX="1.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="DbMyPortfolioModel.Category" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DbMyPortfolioModel.Contact" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
@@ -19,6 +19,10 @@
         <EntityTypeShape EntityType="DbMyPortfolioModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="DbMyPortfolioModel.FK_Contact_Category" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DbMyPortfolioModel.Admin" Width="1.5" PointX="6.5" PointY="8.125" />
+        <EntityTypeShape EntityType="DbMyPortfolioModel.Internship" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DbMyPortfolioModel.Portfolio" Width="1.5" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="DbMyPortfolioModel.Testimonial" Width="1.5" PointX="11.625" PointY="4.75" />
+        <AssociationConnector Association="DbMyPortfolioModel.FK_Testimonial_Portfolio" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

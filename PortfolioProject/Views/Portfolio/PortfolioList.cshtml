@@ -1,0 +1,39 @@
+﻿@model List<PortfolioProject.Models.Portfolio>
+
+@{
+    ViewBag.Title = "PortfolioList";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Portfolyo Listesi ve İşlemleri</h2>
+
+<a href="/Portfolio/CreatePortfolio/" class="btn btn-info">Yeni Portfolyo Ekleme</a>
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kategori</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Resim</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.PortfolioID</th>
+            <td>@item.Category</td>
+            <td>@item.Title</td>
+            <td>@item.Description.Substring(0,30)...</td>
+            <td>@item.ImageUrl.Substring(0, 30)...</td>
+            <td>
+                <a href="/Portfolio/UpdatePortfolio/@item.PortfolioID" class="btn btn-warning">Güncelle</a>
+                <a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>

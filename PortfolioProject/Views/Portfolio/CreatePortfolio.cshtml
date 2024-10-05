@@ -1,0 +1,24 @@
+﻿@model PortfolioProject.Models.Portfolio
+
+@{
+    ViewBag.Title = "CreatePortfolio";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Yeni Portfolyo Ekleme Sayfası</h2>
+
+<form method="post">
+    <label>Kategori</label>
+    @Html.TextBoxFor(x => x.Category, new { @class = "form-control" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Resim</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Portfolyoyu Kaydet</button>
+</form>

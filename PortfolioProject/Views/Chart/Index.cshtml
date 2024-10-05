@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeteneklerim ve Dereceleri</h2>
+
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        // ViewBag'den gelen verileri al
+        var skillNames = @Html.Raw(Json.Encode(ViewBag.SkillNames));
+        var skillRates = @Html.Raw(Json.Encode(ViewBag.SkillRates));
+
+        // Chart.js grafiği oluştur
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar', // Bar chart türü
+            data: {
+                labels: skillNames, // X eksenindeki etiketler
+                datasets: [{
+                    label: 'Yetenek Dereceleri', // Grafik başlığı
+                    data: skillRates, // Y eksenindeki değerler
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Bar arka plan rengi
+                    borderColor: 'rgba(75, 192, 192, 1)', // Bar kenar rengi
+                    borderWidth: 1 // Bar kenar kalınlığı
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // Y ekseninin sıfırdan başlamasını sağla
+                    }
+                }
+            }
+        });
+    };
+</script>
+
+<style>
+    #chartContainer {
+        width: 80%; /* İstediğin genişlik */
+        height: 400px; /* İstediğin yükseklik */
+        margin: auto; /* Ortalamak için */
+    }
+</style>

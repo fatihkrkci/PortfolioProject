@@ -8,10 +8,13 @@
 
 <form method="post">
     <label>Yetenek Başlığı</label>
-    <input type="text" name="SkillName" class="form-control" />
+    <input type="text" name="SkillName" required maxlength="30" class="form-control" />
     <br />
-    <label>Yetenek Değeri</label>
-    <input type="number" name="Rate" class="form-control" />
+    <label>Yetenek Derecesi</label>
+    <input type="number" name="Rate" required class="form-control" />
+    <br />
+    <label>Yetenek İkonu</label>
+    <input type="text" name="Icon" required maxlength="50" class="form-control" />
     <br />
     <button class="btn btn-info">Yeteneği Ekle</button>
 </form>
